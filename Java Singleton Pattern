@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.lang.reflect.*;
+
+
+class Singleton{
+    // 2. Public String instance variable
+    public String str;
+    
+    // Static variable to hold the single instance of the class
+    private static Singleton instance;
+
+    // 1. Private constructor prevents instantiation from outside the class
+    private Singleton() {
+        // No-arg constructor
+    }
+
+    // 3. Static method to return the single instance
+    // We use lazy initialization to create the instance only when needed
+    public static Singleton getSingleInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+
