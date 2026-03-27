@@ -1,0 +1,29 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        String n = bufferedReader.readLine();
+                // 1. Convert the input string into a BigInteger
+        BigInteger bigInt = new BigInteger(n);
+
+        // 2. Check for primality using isProbablePrime
+        // A 'certainty' of 100 is standard for ensuring accuracy
+        if (bigInt.isProbablePrime(100)) {
+            System.out.println("prime");
+        } else {
+            System.out.println("not prime");
+        }
+
+        bufferedReader.close();
+    }
+}
