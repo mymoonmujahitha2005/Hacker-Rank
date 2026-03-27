@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        // Write your code here.
+                // 1. Create a StringTokenizer using all the specified punctuation as delimiters
+        // StringTokenizer automatically ignores leading/trailing delimiters 
+        // and doesn't create empty tokens.
+        StringTokenizer st = new StringTokenizer(s, " !,?._'@");
+        
+        // 2. Print the total count of tokens
+        System.out.println(st.countTokens());
+        
+        // 3. Print each token on a new line
+        while (st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+        }
+
+        scan.close();
+    }
+}
+
